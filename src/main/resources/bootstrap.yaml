@@ -1,0 +1,24 @@
+spring:
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+  application:
+    name: rrhh-service
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8081
+  datasource:
+    url: jdbc:postgresql://localhost:5432/rrhh
+    username: postgres
+    password: admin
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # Expose all endpoints   
